@@ -40,10 +40,10 @@ double Jet::mileageEstimate(double time){
     if(getFuelType()=="Rocket")
         distance = distance + mileage * 0.055;
 
-    return distance;
+    return distance*time;
 }
 
 string Jet::toString(){
     return "-> Jet\n"+ PoweredVehicle::toString() + "\n\tNumber of Engines: " + 
-        to_string(numberOfEngines) + "\n\tMileage: " + to_string(mileage);
+        to_string(numberOfEngines);
 };

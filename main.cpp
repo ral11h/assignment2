@@ -36,6 +36,6 @@ void printVehiclesRoster(Vehicle **vehicles, int size) {
         cout << i << " " << vehicles[i]->toString() << endl;
         cout << "\tWould travel: "
              << vehicles[i]->mileageEstimate(simulatedDistance) << " miles in "
-             << simulatedDistance << " seconds" << endl;
+             << simulatedDistance << " minutes" << endl;
     }
 }
