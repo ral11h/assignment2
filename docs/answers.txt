@@ -59,7 +59,7 @@ To https://github.com/ral11h/assignment2.git
 3.E.b
 --------------------------------------------------------------------------------
 
-8 commits so far, you can use git log and simply count each commit, or do the
+    8 commits so far, you can use git log and simply count each commit, or do the
 command git rev-list master --count and it will display the number of commits
 so far on master branch.
 
@@ -68,21 +68,21 @@ so far on master branch.
 3.E.c
 --------------------------------------------------------------------------------
 
-Using git log, it appears that the last modification was by Esteban on
+    Using git log, it appears that the last modification was by Esteban on
 Wed Sep 25 18:13:30 2019 -0400
 
 
 
 3.E.d
 --------------------------------------------------------------------------------
-One reason why branches are used are to seperate code that is finished and code that
+    One reason why branches are used are to seperate code that is finished and code that
 is currently being developed. This way even if we do something bad in a branch that
 affects that code that already works, we can always go back to the master branch or
 another branch to retrieve what we lost. This becomees more aparent when there are 
 multiple features being developed at once by various teams.In this case having a branch
 for each team would be very useful.
 
-Another reason why branches are used is to have the ability to let the client see what
+    Another reason why branches are used is to have the ability to let the client see what
 work is finished and in development. If everyone is commiting they're changes that
 involve different aspects of the application to the main branch, most likely the code in
 the master branch will not work due to all of the collaboration and unfinished sections of
@@ -94,7 +94,7 @@ update to the client.
 3.E.e
 ---------------------------------------------------------------------------------------
 
-The difference betwen git log and git status is that log lists information about commits
+    The difference betwen git log and git status is that log lists information about commits
 in reverse chronological order that have been made to the repository, while git status 
 provides you with details of the files that have been modified and are ready to be staged 
 for a commit, and files that have been added to the commit. It also lets you know if your 
@@ -150,23 +150,26 @@ git log --grep=file
 3.E.h
 ---------------------------------------------------------------------------------------
 
-Inheritance refers to when one class "inherits" the properties of another class, meaning
+ Inheritance refers to when one class "inherits" the properties of another class, meaning
 the properties available to the parent class are also available to the child class. For
 example, let's say there is a class Student with a sub class called MathStudents. If
 a function called getName() is defined in Student but not in MathStudent. However, 
+
 MathStudent math_stud; 
 math_stud.getName(); 
+
 is a valid call because it inherits the function from Student.
 
-Polymorphism refers to having multiple forms, and is the ability to assign different
+    Polymorphism refers to having multiple forms, and is the ability to assign different
 contexts to the same entity, such as a variable. for example if we have a class Student
 and sub classes MathStudent and EnglishStudent, the following assignments are examples
 of polymorphism.
+
 Student student= new Student();
 Student student= new MathStudent();
 Student student= new EnglishStudent();
 
-Encapsulation is the bundling of data and various methods in a class and giving restrictions
+    Encapsulation is the bundling of data and various methods in a class and giving restrictions
 or complete access to the data. This is done typically with keywords such as public: which
 everyone has access, private: , only the class has direct access, protected: , sub-classes
 have direct access as well.
@@ -181,3 +184,46 @@ have direct access as well.
 
 3.E.j
 ---------------------------------------------------------------------------------------
+
+
+5
+---------------------------------------------------------------------------------------
+
+    The driving simulator is using both concepts; polymorphism and encapusalution. Polymorphism
+refers to having multiple meanings. 
+
+    In the driving simulator, class Vehicle derives all of the other classes either directly or 
+indirectly, therefore we have the ability to give multiple meanings to objects of type Vehicle. 
+A Vehicle can be a PoweredVehicle, a Car, a Jet, a skateboard, etc.. We use this in main.cpp 
+when we used an array of Vehicle pointers to assign each pointer a different type of vehicle 
+to that element. i.e. from main.cpp:
+    
+    vehiclesArray[4] = new Bicycle("Mizuno", "Wave", 10);
+    vehiclesArray[5] = new Car("BMW", "X5", "diesel", "grande");
+    vehiclesArray[6] = new Jet("Jet", "Mark1", "Rocket", 4);
+    vehiclesArray[7] = new Skateboard("Element", "V3");
+
+    So, even though each pointer is of type Vehicle, because of polymorphism they can point at other objects
+that are derived from Vehicle such as Car and Jet in addition to objects of type Vehicle.
+
+    The simulator also used encapsulation which refers to the bundling of data and giving restrictions
+or direct access to that data. Each class encompasses this idea by indicating whether a member function or
+variable is either public or private. For example in class Vehicle:
+
+    private :
+        string myBrand, myModel;
+
+    public:
+        explicit Vehicle(string brand = "unknown", string model = "unknown");
+
+        virtual ~Vehicle();
+        string getBrand();
+        void setBrand(string brand);
+        string getModel();
+        void setModel(string model);
+        virtual string toString();
+
+    So, the data has been encapsulized into either public or private; public meaning 
+any one can access it and private meaning only I can access it. Vehicle is not the only
+class to encapsulize its data into public or private, all of the other classes followed
+the same concept.
