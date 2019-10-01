@@ -1,6 +1,6 @@
 ////////////////////////////
 //  Author: Ryan Leigh    //
-//  Jet.cpp               //
+//  Dirtbike.cpp          //
 //                        //
 ////////////////////////////
 #include "Dirtbike.h"

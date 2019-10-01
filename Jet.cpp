@@ -1,6 +1,6 @@
 //////////////////////////
-//Author: Ryan Leigh	//
-//Jet.cpp		//
+// Author: Ryan Leigh	//
+// Jet.cpp		//
 //			//
 //////////////////////////
 #include "Jet.h"
