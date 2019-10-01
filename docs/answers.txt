@@ -1,3 +1,5 @@
+Name: Ryan Leigh
+FSUID: ral11h
 answers.txt
 
 3.E.a
@@ -179,11 +181,32 @@ have direct access as well.
 3.E.i
 ---------------------------------------------------------------------------------------
 
+    The main differences between Integration Manager Workflow and Dictator and Lieutenants
+Workflow is the way that conflicts are resolved before pushing to the main shared repository.
+In Integration Manager, each developer has two seperate repositories, one private and one 
+public. They will pull from the shared repository into their private repos, and push they're
+additions to the shared repo to their public repository. Integration manager can then pull
+from each developers public repositories, and then handle the merge conficts before pushing
+to changes to the shared repository. Dictator and Lieutenants on the other hand has only one
+repository for each developer, in which case these developers will instead push their changes
+to their designated lieutenant repository. Lieutenants can be assigned to more than one developer,
+and it will handle the merge conflicts between their assigned developers. Each lieutenant then
+pushes to a dictator repository which handles the merge conflicts between the lieutenants. The
+dictator then pushes the conflict free changes to the main shared repository.
 
 
 
 3.E.j
 ---------------------------------------------------------------------------------------
+
+    A development team of a size of 100 would have a terrible time utilizing a centralized
+workflow, because there would be merge conflicts with so many different people, all of which
+have to be handled and if you have conflicts with a lot of people, it will take so long to 
+handle all of them. However if each developer had an assigned lieutenant repository, then the
+only merge conflicts they will have is with the people assigned to the same lieutenant repository,
+which will drastically lower the number of merge conflicts at each stage, making your life much 
+easier. The dictator can then resolve the merge conflicts between the lieutenants.
+
 
 
 5
