@@ -1,0 +1,183 @@
+answers.txt
+
+3.E.a
+--------------------------------------------------------------------------------
+
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> mkdir docs
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> git status > docs/status.txt
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> git add docs
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> git commit
+[master a6f2f8d] Created a folder called docs with status.txt
+ Committer: Ryan Alexander Leigh <leigh@linprog3.cs.fsu.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 9 insertions(+)
+ create mode 100644 docs/status.txt
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 2 commits.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': ral11h@my.fsu.edu
+Password for 'https://ral11h@my.fsu.edu@github.com':
+Counting objects: 9, done.
+Delta compression using up to 56 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 893 bytes | 0 bytes/s, done.
+Total 7 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/ral11h/assignment2.git
+   f4975e5..a6f2f8d  master -> master
+
+
+
+3.E.b
+--------------------------------------------------------------------------------
+
+8 commits so far, you can use git log and simply count each commit, or do the
+command git rev-list master --count and it will display the number of commits
+so far on master branch.
+
+
+
+3.E.c
+--------------------------------------------------------------------------------
+
+Using git log, it appears that the last modification was by Esteban on
+Wed Sep 25 18:13:30 2019 -0400
+
+
+
+3.E.d
+--------------------------------------------------------------------------------
+One reason why branches are used are to seperate code that is finished and code that
+is currently being developed. This way even if we do something bad in a branch that
+affects that code that already works, we can always go back to the master branch or
+another branch to retrieve what we lost. This becomees more aparent when there are 
+multiple features being developed at once by various teams.In this case having a branch
+for each team would be very useful.
+
+Another reason why branches are used is to have the ability to let the client see what
+work is finished and in development. If everyone is commiting they're changes that
+involve different aspects of the application to the main branch, most likely the code in
+the master branch will not work due to all of the collaboration and unfinished sections of
+code. On the other hand with branches the main is unaffected, and you can give a progress
+update to the client.
+
+
+
+3.E.e
+---------------------------------------------------------------------------------------
+
+The difference betwen git log and git status is that log lists information about commits
+in reverse chronological order that have been made to the repository, while git status 
+provides you with details of the files that have been modified and are ready to be staged 
+for a commit, and files that have been added to the commit. It also lets you know if your 
+branch is up to date.
+
+
+
+3.E.f
+---------------------------------------------------------------------------------------
+
+You can type the command:
+git log Vehicle.h
+
+leigh@linprog3.cs.fsu.edu:~/CEN4020/assignment2> git log Vehicle.h
+commit 03106e92a1e36708334c69dd071088c6d0937b1d
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 11 16:58:59 2019 -0400
+
+    -> Declared the trivial destructors for all classes
+    -> Fully formatted toString methods for all classes
+    -> Added test cases in the main method for testing the implementations
+    -> Added validation on value for engine sizes in the  Car class
+
+commit f9cd890b3f89fbe5920a1fdf7da34ee915ba27b9
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 18:42:39 2019 -0400
+
+    -> Partial implementation of PoweredVehicle and Car
+    -> Definition of virtual functions
+
+commit f9c24b027e6275ff6a1911241014c44971b4e8d0
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 18:04:36 2019 -0400
+
+    Refactored Vehicle class to separate definition and declarations
+    Added mileageEstimate abstract method to Vehicle
+    Implemented the Bicycle class
+
+commit 4f6c88c953f4601929df7980a19dcdaee4f13854
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 14:59:19 2019 -0400
+
+    Base Vehicle class created
+
+
+
+3.E.g
+---------------------------------------------------------------------------------------
+
+git log --grep=file
+
+
+3.E.h
+---------------------------------------------------------------------------------------
+
+Inheritance refers to when one class "inherits" the properties of another class, meaning
+the properties available to the parent class are also available to the child class. For
+example, let's say there is a class Student with a sub class called MathStudents. If
+a function called getName() is defined in Student but not in MathStudent. However, 
+MathStudent math_stud; 
+math_stud.getName(); 
+is a valid call because it inherits the function from Student.
+
+Polymorphism refers to having multiple forms, and is the ability to assign different
+contexts to the same entity, such as a variable. for example if we have a class Student
+and sub classes MathStudent and EnglishStudent, the following assignments are examples
+of polymorphism.
+Student student= new Student();
+Student student= new MathStudent();
+Student student= new EnglishStudent();
+
+Encapsulation is the bundling of data and various methods in a class and giving restrictions
+or complete access to the data. This is done typically with keywords such as public: which
+everyone has access, private: , only the class has direct access, protected: , sub-classes
+have direct access as well.
+
+
+
+3.E.i
+---------------------------------------------------------------------------------------
+
+
+
+
+3.E.j
+---------------------------------------------------------------------------------------
