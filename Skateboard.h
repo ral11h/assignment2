@@ -1,3 +1,9 @@
+////////////////////////////
+//  Author: Ryan Leigh    //
+//  Skateboard.h          //
+//                        //
+////////////////////////////
+
 #ifndef DRIVINGSIMULATOR_SKATEBOARD_H
 #define DRIVINGSIMULATOR_SKATEBOARD_H
 
@@ -6,9 +12,13 @@
 class Skateboard : public Vehicle {
 
 public:
+    //constructor
     explicit Skateboard(string brand = "unknown", string model = "unknown");
-    virtual ~Skateboard();
-    virtual string toString();
-    virtual double mileageEstimate(double time);
+    
+    virtual ~Skateboard();				//destructor
+    virtual string toString();				//toString function
+    
+    virtual double mileageEstimate(double time);	//returns miles after 
+  							//'time' in minutes
 };
 #endif

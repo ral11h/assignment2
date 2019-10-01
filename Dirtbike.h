@@ -1,3 +1,9 @@
+////////////////////////////
+//  Author: Ryan Leigh    //
+//  Dirtbike.h            //
+//                        //
+////////////////////////////
+
 #ifndef DRIVINGSIMULATOR_DIRTBIKE_H
 #define DRIVINGSIMULATOR_DIRTBIKE_H
 
@@ -10,15 +16,19 @@ private:
     int engineSize;       //250, 400, 600, etc. 
 
 public:
-    explicit Dirtbike(string brand, string model, string fuelType, int engineType= 2,int engineSize = 400);
+    //constructor
+    explicit Dirtbike(string brand, string model, string fuelType, 
+                       int engineType= 2,int engineSize = 400);
 
-    virtual ~Dirtbike();
-    string getEngineType();
-    void setEngineType(int type);
-    int getEngineSize();
-    void setEngineSize(int size);
-    virtual double mileageEstimate(double time);
-    virtual string toString();
+    virtual ~Dirtbike();		//destructor
+    string getEngineType();		//returns engine type
+    void setEngineType(int type);	//sets engine type either 2 or 4
+    int getEngineSize();		//returns engine size
+    void setEngineSize(int size);	//sets the engine size
+    virtual double mileageEstimate(double time);    //returns miles after 'time'
+						    //in minutes
+
+    virtual string toString();		//toString function
 };
 
 #endif
